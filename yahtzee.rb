@@ -21,12 +21,12 @@ def ask_num message
   return answer
 end
 
-again = ask "would you like to keep any of these dice? (Y or N): "
+again = ask "would you like to keep any of these dice? ('y' or 'n'): "
 p again
 p again.class
 
 hold = []
-while again == "Y" or "y"
+while again == "y"
   keep = ask_num "Enter a number you'd like to keep: "
   p keep
   p keep.class
@@ -36,8 +36,12 @@ while again == "Y" or "y"
     hold.push(keep)
     puts "You are holding onto #{hold}."
     puts "You have #{roll_1} to choose from."
+  elsif not roll_1.include?(keep)
+    again = ask "That's not an option. #{roll_1} ...want to keep any of these? ('y' or 'n'): "
+    p again, again.class
   else
-    again = ask "would you like to keep any of these dice? (Y or N): "
+    again = ask "Want to keep any of these dice? ('y' or 'n'): "
+    p again, again.class
   end
 end
 
