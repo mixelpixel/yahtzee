@@ -131,3 +131,117 @@ p Die3.new(sides: 20).roll
 # p Die6.new(:base=>20, :sides=>50).roll         # alternate syntax
 # p Die6.new(:sides=>50, :base=>20).roll         # trivial note, order is unimportant
 
+
+puts
+class Die7
+
+  def initialize(sides: [*1..6])
+    @sides     = sides
+  end
+
+  def roll
+    @sides.sample
+  end
+end
+
+p Die7.new.roll
+p Die7.new(sides: [*1..20]).roll
+
+
+puts
+class Die8
+
+  def initialize(*sides)
+    @sides     = sides
+  end
+
+  def roll
+    @sides.sample
+  end
+end
+
+d6 = Die8.new(1, 2, 3, 4, 5, 6)
+p d6.roll
+p Die8.new(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20).roll
+
+puts
+class Die9
+
+  def initialize(*sides)
+    @sides     = sides
+  end
+
+  def roll
+    @sides.sample
+  end
+end
+
+die6 = Die9.new(*1..6)
+p die6.roll
+p Die9.new(*1..20).roll
+
+
+puts
+class SuperDie
+  def initialize(*sides)
+    @sides     = sides
+  end
+  
+  def roll
+    @sides.sample
+  end
+end
+
+
+class SixSidedDie < SuperDie
+  def initialize
+    super(*1..6)
+  end
+end
+
+d6 = SixSidedDie.new
+p d6.roll
+
+class TwentySidedDie < SuperDie
+  def initialize
+    super(*1..20)
+  end
+end
+
+d20 = TwentySidedDie.new
+p d20.roll
+
+
+puts
+class SuperDie1
+
+  attr_accessor :sides                 # allows for sides to be written without the @
+  
+  def initialize(*sides)
+    @sides     = sides                 # once it is set here
+  end
+  
+  def roll
+    # @ sides.sample
+    sides.sample                       # I no longer need the @
+  end
+end
+
+
+class SixSidedDie1 < SuperDie1
+  def initialize
+    super(*1..6)
+  end
+end
+
+d6 = SixSidedDie1.new
+p d6.roll
+
+class TwentySidedDie1 < SuperDie1
+  def initialize
+    super(*1..20)
+  end
+end
+
+d20 = TwentySidedDie1.new
+p d20.roll
