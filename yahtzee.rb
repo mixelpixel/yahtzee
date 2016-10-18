@@ -25,6 +25,8 @@ again = ask "would you like to keep any of these dice? ('y' or 'n'): "
 p again
 p again.class
 
+
+# THIS IS A HOT MESS...
 hold = []
 while again == "y"
   keep = ask_num "Enter a number you'd like to keep: "
