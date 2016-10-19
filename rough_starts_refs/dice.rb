@@ -245,3 +245,15 @@ end
 
 d20 = TwentySidedDie1.new
 p d20.roll
+
+of note: 
+
+# attr_accessor :sides creates two helper methods, something like
+# def sides
+  # @sides
+# end
+
+# def sides=(value)
+  # @sides = value
+# end
+
