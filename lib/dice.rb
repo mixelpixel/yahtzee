@@ -17,3 +17,16 @@ class Die
   end
 end
 
+
+class Dice < Die
+
+  def initialize(size: 5)
+    @size      = size
+  end
+  
+  def first_roll
+    # five_dice = Array.new(5) do |i|; i = Die.new.roll; end
+    Array.new(@size) { Die.new.roll }
+  end
+
+end

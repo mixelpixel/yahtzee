@@ -37,3 +37,11 @@ RSpec.describe Die do
   end
 
 end
+
+RSpec.describe Tray do
+  context "An array (a tray) of dice roll values" do
+    it "should collect the values from rolling five six sided die" do
+      expect(
+    end
+  end
+end

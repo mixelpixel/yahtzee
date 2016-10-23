@@ -1,12 +1,14 @@
 =begin
 collect the value of rolling five six-sided dice
-Note: Die class defaults to a six sided die
+sends msg request to choose die or roll again
+sends chosen dice to player hold
+Takes msg to either roll again (up to three total rolls) or score.
+(needs more description)
 =end
 
 require "dice"
 
 class Tray
-  # five_dice = Array.new(5) do |i|; i = Die.new.roll; end
-  five_dice = Array.new(5) { Die.new.roll }
+
 end
 
