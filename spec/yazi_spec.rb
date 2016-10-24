@@ -64,6 +64,9 @@ RSpec.describe Player do
 
   context "Player chooses dice" do
 
+    it "should roll five six-sided dice for the player" do
+    end
+
     it "should send the values to the Player" do
     end
     
