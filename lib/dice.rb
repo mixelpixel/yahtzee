@@ -1,7 +1,8 @@
 =begin
-Roll a six sided dice
+Dice for a yahtzee game.
+The default values roll a six sided die five times.
 http://stackoverflow.com/questions/40099433/manipulating-ruby-class-default-values
-base/sides model
+Die uses a base/sides model instead of max/min.
 =end
 
 
@@ -20,13 +21,14 @@ end
 
 class Dice < Die
 
-  def initialize(size: 5)
-    @size      = size
+  def initialize(num_of_die: 5)
+    @num_of_die = num_of_die
   end
   
-  def first_roll
-    # five_dice = Array.new(5) do |i|; i = Die.new.roll; end
-    Array.new(@size) { Die.new.roll }
+  def roll_five_dice
+    # five_dice = Array.new(@num_of_die) do |i|; i = Die.new.roll; end
+    Array.new(@num_of_die) { Die.new.roll }
   end
 
 end
+
