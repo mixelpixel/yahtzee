@@ -3,9 +3,10 @@ tests for a yahtzee game
 =end
 
 require "dice"
-require "tray"
+
 
 RSpec.describe Die do
+
   context "Six sided" do
     it "should return a value from 1 to 6 when rolled" do
       100000.times do |i|
@@ -38,10 +39,22 @@ RSpec.describe Die do
 
 end
 
-RSpec.describe Tray do
-  context "An array (a tray) of dice roll values" do
-    it "should collect the values from rolling five six sided die" do
-      expect(
+RSpec.describe Dice do
+
+  context "The array containing the FIRST dice roll values" do
+    it "should collect the values from rolling FIVE six-sided dice" do
+      expect(Dice.new.first_roll.count).equal?(5)
     end
   end
+
+  context "each value in the array" do
+    it "should be between ONE and SIX" do
+      100000.times do |x|
+        Dice.new.first_roll.each do |i|
+        expect(i).to be_between(1, 6)
+        end
+      end
+    end
+  end
+  
 end
