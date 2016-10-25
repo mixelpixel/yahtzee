@@ -4,7 +4,10 @@ tests for a yahtzee game
 
 require "dice"
 require "player"
+require "game"
 
+
+# DICE
 
 RSpec.describe Die do
 
@@ -60,18 +63,34 @@ RSpec.describe Dice do
   
 end
 
+
+# PLAYER
+
 RSpec.describe Player do
 
-  context "Player chooses dice" do
+  context "Players first roll" do
 
-    it "should roll five six-sided dice for the player" do
-    end
-
-    it "should send the values to the Player" do
+    it "should send the FIVE six-sided dice values to the Player" do
+      expect(Player.new.first_roll.count).equal?(5)
     end
     
-    it "should remove the dice the player selected" do
+    it "should have five values between ONE and SIX" do
+      10000.times do |x|
+        Player.new.first_roll.each do |i|
+        expect(i).to be_between(1, 6)
+        end
+      end
     end
     
   end
+end
+
+
+# GAME LOGIC
+
+RSpec.describe RoundOne do
+
+  context "" do
+  end
+
 end
