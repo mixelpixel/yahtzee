@@ -7,10 +7,11 @@ require_relative "player"
 
 class Game
 
-  def initialize(roll_dice: [], player_dice: [], score_dice: [])
-    @roll_dice   = roll_dice
+  def initialize(table_dice: [], player_dice: [], score_dice: [], rolls: 3)
+    @table_dice  = table_dice
     @player_dice = player_dice
     @score_dice  = score_dice
+    @rolls       = rolls
   end
 
   def ask_str message
@@ -38,9 +39,13 @@ class Game
   end
 
   def round_one_roll
-    @roll_dice = Player.new.first_roll
+    @rolls -=1
+    @table_dice = Player.new.first_roll
   end
 
+  def keep
+    
+  end
 
 end
 
