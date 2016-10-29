@@ -15,3 +15,33 @@ http://www.classicwebgames.com/board/yahtzee/
 I'd like to also use Rspec for Test/Behavioral Driven Development  
 http://rspec.info/
 ...and will be setting it up in a win7 environment.
+
+per Hoyle's:  
+5 dice  
+2 - 10 players  
+12 rounds  
+each player has 1 turn in each each round  
+a turn consists of 3 rolls of the dice; at any time the player may stand or pickup and reroll any dice (for three rolls)  
+at the end of each turn, the player designates a score from the dice.  
+the scoree goes to one of 12 categories  
+  
+Yahtzee - 5 of a kind  
+big straight - 5 in a row  
+little straight - 4 in a row  
+four of a kind  
+(three of a kind?)  
+Full House  - 2 of a kind and three of a kind  
+Choice (Chance) - sum of all dice  
+  
+(The following all sum the particular dice)  
+Sixes  
+Fives  
+Fours  
+Threes  
+Deuces (Twos)  
+Aces (Ones)  
+  
+If the player has no qualifying dice, they must enter a zero in one of the categories.  
+Each category can only be scored once per game.
+
+high score wins!  
