@@ -16,7 +16,7 @@ I'd like to also use Rspec for Test/Behavioral Driven Development
 http://rspec.info/
 ...and will be setting it up in a win7 environment.
 
-per Hoyle's:  
+per Hoyle's rules for Yacht:  
 5 dice  
 2 - 10 players  
 12 rounds  
